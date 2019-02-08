@@ -1,0 +1,29 @@
+.content {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+}
+.spotlight {
+  display: none;
+  position: absolute;
+}
+.spotlight div {
+  position: absolute;
+}
+
+#a {
+  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-overly-saturated.jpg) no-repeat 0 0; 
+}
+
+#a .spotlight div {
+  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-desaturated.jpg) no-repeat 0 0;
+}
+
+#b {
+  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-desaturated.jpg) no-repeat 0 0; 
+}
+
+#b .spotlight div {
+  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-overly-saturated.jpg) no-repeat 0 0;
+}
