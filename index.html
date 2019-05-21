@@ -5,16 +5,51 @@
   <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"> 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="handlers.js"></script>
   
 </head>
 <body>
-  <h3>hello world</h3>
-  <div id="a" class="content">
-    <div class="spotlight"></div>
+  <header>
+    <h1 id="title" class="display-3">city trip</h1>
+    <p>
+      <small>what makes the same moments more treasurable?</small>
+    </p>
+    <div>
+      <button id="oh-btn" type="button" class="btn-xs btn-light">on hover</button>
+      <button id="s2s-btn" type="button" class="btn-xs btn-dark">side-to-side</button>
+    </div>
+  </header>
+
+  <div id="on-hover" class="view">
+    <div class="moment">
+      <div id="a" class="content row mx-auto">
+        <div class="spotlight"></div>
+      </div>
+      <div id="b" class="content row mx-auto">
+        <div class="spotlight"></div>
+      </div>
+      <div id="c" class="content row mx-auto">
+        <div class="spotlight"></div>
+      </div>
+    </div>
   </div>
-  <div id="b" class="content">
-    <div class="spotlight"></div>
+
+  <div id="side-to-side" class="view">
+    <div class="s2s row mx-auto">
+      <img src="media/train-a.gif"/>
+      <img src="media/train-b.gif"/>
+    </div>
+    <div class="s2s row mx-auto">
+      <img src="media/chacha-b.gif"/>
+      <img src="media/chacha-a.gif"/>
+    </div>
+    <div class="s2s row mx-auto">
+      <img src="media/concert-a.gif"/>
+      <img src="media/concert-b.gif"/>
+    </div>
   </div>
 </body>

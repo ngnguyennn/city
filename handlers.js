@@ -1,9 +1,12 @@
 // credit http://jsfiddle.net/bu7rd/
 
 // Global variables
-var spotlightDiameter = 60;
-var numSpotlightLayers = 6;
-var spotlightLayerThickness = 14;
+var globals = {
+  diameter: 150,
+  layers: 10,
+  thickness: 15
+};
+var moment = { ids: ['a', 'b', 'c'], id: 'a'} ;
 
 // Verify that the mouse event wasn't triggered by a descendant.
 function verifyMouseEvent(e, elem) {
@@ -23,12 +26,12 @@ function verifyMouseEvent(e, elem) {
 // Create the spotlight
 function createSpotlight() {
   $(".spotlight")
-    .width(spotlightDiameter + "px")
-    .height(spotlightDiameter + "px");
+    .width(globals.diameter + "px")
+    .height(globals.diameter + "px");
 
-  for (var i = 0; i < numSpotlightLayers; i++) {
-    var layerDiameter = spotlightDiameter + i * spotlightLayerThickness * 2;
-    var opacity = 1 - i / numSpotlightLayers;
+  for (var i = 0; i < globals.layers; i++) {
+    var layerDiameter = globals.diameter + i * globals.thickness * 2;
+    var opacity = 1 - i / globals.layers;
 
     $(".spotlight").append('<div class="layer' + i + '"></div>');
 
@@ -38,18 +41,18 @@ function createSpotlight() {
       .css({
         borderRadius: (layerDiameter >> 1) + "px",
         opacity: opacity,
-        zIndex: numSpotlightLayers - i
+        zIndex: globals.layers - i
       });
   }
 }
 
 function mouseMoveHandler(e) {
   var center = { x: e.pageX - this.offsetLeft, y: e.pageY - this.offsetTop };
-  var x = center.x - (spotlightDiameter >> 1);
-  var y = center.y - (spotlightDiameter >> 1);
+  var x = center.x - (globals.diameter >> 1);
+  var y = center.y - (globals.diameter >> 1);
 
-  for (var i = 0; i < numSpotlightLayers; i++) {
-    var offset = i * spotlightLayerThickness;
+  for (var i = 0; i < globals.layers; i++) {
+    var offset = i * globals.thickness;
     $("#" + e.currentTarget.id + " .spotlight .layer" + i).css({
       left: -offset + "px",
       top: -offset + "px",
@@ -66,8 +69,24 @@ function mouseOutHandler(e) {
   $("#" + e.currentTarget.id + " .spotlight").hide();
 }
 
+function changeSlide(e, index) {
+  
+}
+
 $(document).ready(function() {
   createSpotlight();
   $(".content").mousemove(mouseMoveHandler);
   $(".content").mouseout(mouseOutHandler);
+  
+  $("#on-hover")[0].style.display = "block";
+  $("#side-to-side")[0].style.display = "none";
+
+  $("#oh-btn").click(function(e) {
+    $("#on-hover")[0].style.display = "block";
+    $("#side-to-side")[0].style.display = "none";
+  });
+  $("#s2s-btn").click(function(e) {
+    $("#on-hover")[0].style.display = "none";
+    $("#side-to-side")[0].style.display = "block";
+  });
 });

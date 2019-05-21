@@ -1,8 +1,44 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: table-cell;
+  margin: 0 auto;
+}
+
+header{
+  position: block;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+#spotlight-range{
+  width: 10%
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
 .content {
   position: relative;
   width: 640px;
   height: 480px;
   overflow: hidden;
+  margin: 0 0 1em auto;
+  /* border:1px solid black; */
 }
 .spotlight {
   display: none;
@@ -12,18 +48,50 @@
   position: absolute;
 }
 
-#a {
-  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-overly-saturated.jpg) no-repeat 0 0; 
+.moment {
+  width: 100%;
+  margin: 0 auto;
+  /* border:3px solid red; */
 }
 
+h1:hover {
+  font-style: oblique;
+}
+
+p:hover {
+  font-style: oblique;
+}
+
+.view {
+  display: block;
+}
+
+.s2s {
+  margin: 1em;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#a {
+  background: url("media/train-a.gif") no-repeat 0 0; 
+}
 #a .spotlight div {
-  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-desaturated.jpg) no-repeat 0 0;
+  background: url("media/train-b.gif") no-repeat 0 0;
 }
 
 #b {
-  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-desaturated.jpg) no-repeat 0 0; 
+  background: url("media/chacha-b.gif") no-repeat 0 0; 
+}
+#b .spotlight div {
+  background: url("media/chacha-a.gif") no-repeat 0 0;
 }
 
-#b .spotlight div {
-  background: url(http://www.forestpath.org/test/misc/img/photos/photo003-640-480-overly-saturated.jpg) no-repeat 0 0;
+#c {
+  background: url("media/concert-b.gif") no-repeat 0 0; 
+}
+#c .spotlight div {
+  background: url("media/concert-a.gif") no-repeat 0 0;
 }
